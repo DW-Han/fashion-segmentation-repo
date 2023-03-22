@@ -1,4 +1,4 @@
-# pp-translation
+# Fashion Segmentation
 
 
-## it translates powerpoints!!!!!! yay
+## it segments out clothes woo
