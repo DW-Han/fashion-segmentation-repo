@@ -1,0 +1,23 @@
+{   
+    "content_security_policy": "script-src 'self' nonce-your-unique-nonce; object-src 'self'",
+    "name": "Clothes Segmentator",
+    "version": "1.0.0",
+    "description": "Segments out Clothes",
+    "manifest_version": 2,
+
+    "browser_action":{
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
+    },
+    "permissions": [
+        "browserAction",
+        "downloads",
+        "activeTab"
+    ],
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "web_accessible_resources": [
+        "popup.html"
+    ]
+}

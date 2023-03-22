@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <title>PowerPoint Language Settings</title>
+</head>
+
+<header>
+  <header>
+    <nav>
+      <ul>
+<font size ="+5"><b>PowerPoint Language Translator</b></font>
+      </ul>
+    </nav>
+  </header>  </header>
+  <style>
+body {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    background-color: rgba(255, 201, 120, 0.1); 
+
+}
+ 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+html {
+  font-family: "Poppins";
+  font-size: xx-large;
+}
+
+  
+header {
+  font-size: large;
+  background-color: rgb(195, 198, 199);
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html * {
+  font-family: Poppins;
+}
+.tab {
+  display: inline-block;
+  margin-left: 30px;
+}
+.button-two {
+  border-radius: 4px;
+  color: white;
+
+  background-color:#0091ff;
+  border: none;
+  padding: 0px;
+  width: 200px;
+  height: 60px;
+  transition: all 0.5s;
+}
+
+
+.button-two span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 1s;
+}
+
+.button-two span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-two:hover span {
+  padding-right: 25px;
+}
+
+.button-two:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+.wrapper {
+  margin: 0;
+  position: absolute;
+  top: 52.5%;
+  left: 82.5%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+select{
+    width: 10%;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: rgb(222, 225, 226);
+    background-image: none;
+    border: 1px solid rgb(41, 18, 18);
+}
+select>option{
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    background-color: rgb(247, 247, 247);
+    background-image: none;
+    font-size: 18px;
+    height: 50px;
+    padding: 15px;
+    border: 1px solid rgb(41, 18, 18);
+}
+
+.textboxHeader{
+  position: absolute;
+  top: 25%;
+  left: 5%;
+}
+.textbox{
+  position: absolute;
+  top: 35%;
+  left: 5%;
+}
+
+</style>
+
+</header>
+<br>
+
+<body>
+    <div class = "main">
+      <div class = "wrapper">
+      <center>
+          <form>
+              <label for="from-language">Translate from:</label>
+              <div class="fromLanguageBox" style = "width:2000px;">  
+                <select>
+                  <option value="en">Auto</option>
+                  <option value="en">English</option>
+                  <option value="fr">French</option>
+                  <option value="es">Spanish</option>
+                  <option value="zh">Chinese</option>
+                  <option value="ko">Korean</option>
+                  <option value="de">German</option>
+                  <option value="lt">Lithuanian</option>
+                </select>
+              </div>
+              
+              <label for="to-language">Translate to:</label>
+              <div class="toLanguageBox" style = "width:2000px;">
+                <select>
+                  <option value="en">English</option>
+                  <option value="fr">French</option>
+                  <option value="es">Spanish</option>
+                  <option value="zh">Chinese</option>
+                  <option value="ko">Korean</option>
+                  <option value="de">German</option>
+                  <option value="lt">Lithuanian</option>
+                </select>
+              </div>
+              <br>
+              <br>
+              <div class="sub-main">
+                <button class="button-two"><font size="-1"><span>Save</span></font></button>
+              </div>
+
+            </form>
+        </center>
+    </div>
+    <div class = "textboxHeader">
+      <strong> Instructions:</strong>
+      
+    </div>
+    <div class = "textbox">
+     <small>Set your source and destination languages and then click Save. 
+      <br>
+      Now you are good to go! Simply download your powerpoint and <br> it will be autotranslated for you.
+     </small>
+      
+    </div>
+  </div>
+  
+ 
+</body>
+
+</html>
