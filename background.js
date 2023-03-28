@@ -7,7 +7,7 @@ chrome.downloads.onChanged.addListener(function(downloadDelta) {
         console.log(downloadItems[0].url);
         
         //if pptx then create window and send info
-        if (downloadItems[0].filename.endsWith('.pptx')) {
+        if (downloadItems[0].filename.endsWith('.jpg') || downloadItems[0].filename.endsWith('.png')) {
           console.log(downloadItems[0].filename + ' is a PowerPoint presentation.');
 
           var fileName = "filepath.txt";
