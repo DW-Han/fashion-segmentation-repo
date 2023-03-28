@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap');
+
+@font-face {
+    font-family: BigShouldersText;
+    src: url("fonts/BigShouldersText.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box; /* size of elements are determined by padding and margin and size of content */
+    font-family: Raleway;
+    color: #777;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.section-header {
+    font-family: "BigShouldersText";
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.project-name {
+    text-align: center;
+    margin: 0;
+    font-size: 4em;
+    font-family: "BigShouldersText";
+    font-weight: normal;
+    color: white;
+}
+
+.project-name-large {
+    font-size: 8em;
+}
+
+.main-header {
+    background-color: rgba(0, 0, 0, .15);
+    background-image: url("Images/MT_JOY_album1.jpeg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+
+.img-responsive {
+    width: 65%
+}
