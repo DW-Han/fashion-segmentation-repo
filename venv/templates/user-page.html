@@ -72,7 +72,6 @@
 
         <!-- image button -->
         <input type="file" accept="image/*" onchange="loadFile(event)">
-<<<<<<< HEAD
         <p><img class="img-responsive" id="pic"/></p>
         <script>
             var loadFile = function(event) {
@@ -80,22 +79,6 @@
                 image.src=URL.createObjectURL(event.target.files[0]);
             };
         </script>
-=======
-        <p>
-          <style>
-            body {
-              background-color: #DBF9FC;
-              }
-            img {  
-              width: 55%;
-              min-width: 13em;
-            }
-
-            </style>
-          <img class="img-responsive" id="pic"/>
-        </p>
-
->>>>>>> 60bc6a47305915dcffb8689c7ee1457b46e9ee58
       </footer>
     </header>
 
@@ -104,6 +87,7 @@
     <section>
       <!-- the description at the bottom of the page, 
         look at above <style> for design-->
+      <!-- TODO: make the description a footer so its way at the bottom -->
       <h2 class="section-header">ABOUT OUR MODEL</h2> 
       <div style='text-align:center;'>
         <p > This website is our minimum viable project for CS 1699, Practical AI.
@@ -113,24 +97,10 @@
           through our custom image segmentation model to identify the clothing based on
           the pattern, shape, and design.
         </p>
-        <p>
-          Our application asks the user to input an image of clothing they found online 
-          or in person, which is then sent through our custom image segmentation model to 
-          identify the clothing based on the pattern, shape, and design.
-        </p>
         <p> Authors: Kenny Han, Emmanuelle Brent, Aidan Reilly </p>
       </div>
   </section>
   </body>
 </head>
-<<<<<<< HEAD
-=======
-<script>
-  var loadFile = function(event) {
-      var image = document.getElementById('pic');
-      image.src=URL.createObjectURL(event.target.files[0]);
-  };
-</script>
->>>>>>> 60bc6a47305915dcffb8689c7ee1457b46e9ee58
 
 </html>
