@@ -72,6 +72,7 @@
 
         <!-- image button -->
         <input type="file" accept="image/*" onchange="loadFile(event)">
+<<<<<<< HEAD
         <p><img class="img-responsive" id="pic"/></p>
         <script>
             var loadFile = function(event) {
@@ -79,6 +80,22 @@
                 image.src=URL.createObjectURL(event.target.files[0]);
             };
         </script>
+=======
+        <p>
+          <style>
+            body {
+              background-color: #DBF9FC;
+              }
+            img {  
+              width: 55%;
+              min-width: 13em;
+            }
+
+            </style>
+          <img class="img-responsive" id="pic"/>
+        </p>
+
+>>>>>>> 60bc6a47305915dcffb8689c7ee1457b46e9ee58
       </footer>
     </header>
 
@@ -106,5 +123,14 @@
   </section>
   </body>
 </head>
+<<<<<<< HEAD
+=======
+<script>
+  var loadFile = function(event) {
+      var image = document.getElementById('pic');
+      image.src=URL.createObjectURL(event.target.files[0]);
+  };
+</script>
+>>>>>>> 60bc6a47305915dcffb8689c7ee1457b46e9ee58
 
 </html>
