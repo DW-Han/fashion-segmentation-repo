@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- idk what this does but if I delete it everything breaks -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    
+    <!-- the words that show up on the tab -->
     <title>Clothing Segmentation</title>
+
+    <!-- styling for everything under <header> and what
+      happens when you hover over a header-->
     <style>
       header{
         font-family: "Poppins";
@@ -24,44 +30,49 @@
     </style>
 </head>
 
-<head> <!-- head of internet search -->
+<head> <!-- what a google search would show (title, description) -->
   <title>Clothing Segmentation</title> <!-- Replaces Tab Name -->
   <meta name="description" contents="This is the description"> <!-- shows on a google search -->
   <link rel="stylesheet" href="styles.css" />
   <script src="store.js" async></script>
 </head>
-<head> <!-- head of index page -->
+
+<head> <!-- HEAD OF MAIN PAGE -->
   <body> 
     <header class="main-header"> 
         <h1 class="project-name project-name-large">Clothing Segmentation</h1> 
         
+        <!-- styling for everything under <section>, <body>, <img> 
+        -->
         <style>
           section{
             font-family: "Poppins";
             font-weight: bold;
             text-align: center;
             font-size: 120%;
+
+            <!-- for the description, so its pretty -->
+            margin-top: 0px;
+            margin-right: 13%;
+            margin-bottom: 100px;
+            margin-left: 13%;
     
             transition-property:color,text-shadow;
             transition-duration: 0.5s;
             transition-timing-function:ease-in;
           }
+          body {
+            background-color: #DBF9FC;
+            }
+          img {  
+            width: 45%;
+            min-width: 12em;
+          }
         </style>
 
+        <!-- image button -->
         <input type="file" accept="image/*" onchange="loadFile(event)">
-        <p>
-          <style>
-            body {
-              background-color: #DBF9FC;
-              }
-            img {  
-              width: 55%;
-              min-width: 13em;
-            }
-
-            </style>
-          <img class="img-responsive" id="pic"/>
-        </p>
+        <p><img class="img-responsive" id="pic"/></p>
         <script>
             var loadFile = function(event) {
                 var image = document.getElementById('pic');
@@ -74,27 +85,26 @@
     
 
     <section>
+      <!-- the description at the bottom of the page, 
+        look at above <style> for design-->
       <h2 class="section-header">ABOUT OUR MODEL</h2> 
-      </p>
-      <p> This website is our final project submission for CS 1699, Practical AI.
-        Our task was to create an application that supports machine learning, and to
-        choose a platform that best suited our model. Our application asks the user to
-        input an image of clothing they found online or in person, which is then sent
-        through our custom image segmentation model to identify the clothing based on
-        the pattern, shape, and design.
-      </p>
-      <p>
-        Our application asks the user to
-        input an image of clothing they found online or in person, which is then sent
-        through our custom image segmentation model to identify the clothing based on
-        the pattern, shape, and design.
-      </p>
-      <p> 
-          Authors: Kenny Han, Emmanuelle Brent, Aidan Reilly</p>
+      <div style='text-align:center;'>
+        <p > This website is our minimum viable project for CS 1699, Practical AI.
+          Our task was to create an application that supports machine learning, and to
+          choose a platform that best suited our model. Our application asks the user to
+          input an image of clothing they found online or in person, which is then sent
+          through our custom image segmentation model to identify the clothing based on
+          the pattern, shape, and design.
+        </p>
+        <p>
+          Our application asks the user to input an image of clothing they found online 
+          or in person, which is then sent through our custom image segmentation model to 
+          identify the clothing based on the pattern, shape, and design.
+        </p>
+        <p> Authors: Kenny Han, Emmanuelle Brent, Aidan Reilly </p>
+      </div>
   </section>
-    
   </body>
 </head>
-
 
 </html>
