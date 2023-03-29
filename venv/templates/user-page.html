@@ -51,7 +51,6 @@
             text-align: center;
             font-size: 120%;
 
-            <!-- for the description, so its pretty -->
             margin-top: 0px;
             margin-right: 13%;
             margin-bottom: 100px;
@@ -73,12 +72,7 @@
         <!-- image button -->
         <input type="file" accept="image/*" onchange="loadFile(event)">
         <p><img class="img-responsive" id="pic"/></p>
-        <script>
-            var loadFile = function(event) {
-                var image = document.getElementById('pic');
-                image.src=URL.createObjectURL(event.target.files[0]);
-            };
-        </script>
+
       </footer>
     </header>
 
@@ -103,4 +97,16 @@
   </body>
 </head>
 
+<script>
+  window.parent.addEventListener("message", function(event) {
+  if (event.source == window && event.data && event.data.greeting == "hello from background") {
+    console.log("Message received from background:", event.data);
+  }
+});
+  var loadFile = function(event) {
+      var image = document.getElementById('pic');
+      image.src=URL.createObjectURL(event.target.files[0]);
+      console.log("Message received from background:");
+  };
+</script>
 </html>

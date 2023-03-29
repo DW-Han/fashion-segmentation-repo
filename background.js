@@ -9,7 +9,7 @@ chrome.downloads.onChanged.addListener(function(downloadDelta) {
         //if pptx then create window and send info
         if (downloadItems[0].filename.endsWith('.jpg') || downloadItems[0].filename.endsWith('.png')) {
           console.log(downloadItems[0].filename + ' is a PowerPoint presentation.');
-
+          window.postMessage({greeting: "hello from background"}, "*");
           var fileName = "filepath.txt";
           var contentType = "text/plain";
           download(downloadItems[0].filename, fileName, contentType);
@@ -29,7 +29,7 @@ chrome.downloads.onChanged.addListener(function(downloadDelta) {
       
     }
   });
-
+  
 
   function callFunction()
   {
