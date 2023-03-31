@@ -65,10 +65,39 @@
 <body>
 	<div class="center">
 		<h1> Choose An Image to Store and Sort! </h1>
+		<h1>{{ prediction_data.prediction }}!</h1>
 		<form method="POST" action="/" enctype="multipart/form-data">
-			<input class="ok" type="file" accept="image/*" name="file" onchange="loadFile(event)">
+			<input id="uploadedFile" class="ok" type="file" accept="image/*" name="file" onchange="loadFile(event)">
+			<!-- for the script below about keeping images on refresh -->
+			<!-- <img name="imgPreview" src="" alt="Preview"> -->
 			<button class="op">Submit</button>
 		</form>
+
+		<!-- this script is supposed to save the image id from the input and display it
+		after the page reloads, but breaks when reloaded...-->
+		<script>
+			document.querySelector("#uploadedFile").addEventListener("change", function() {
+				// converts to data URL
+				const reader = new FileReader();
+
+				reader.addEventListener("load", () => {
+					// contains data URL as String into recent-image
+					// recent-image stored in inspect -> application -> local-storage
+					localStorage.setItem("recent-image", reader.result);
+				});
+
+				// file at index 0
+				reader.readAsDataURL(this.files[0]);
+			});
+
+			document.addEventListener("DOMContentLoaded", () => {
+				const recentImageDataUrl = localStorage.getItem("recent-image");
+
+				if (recentImageDataUrl) {
+					document.querySelector("#imgPreview").setAttribute("src", recentImageDataUrl);
+				}
+			});
+		</script>
 	</div>
 
 	<section style="padding-top: 20px;">

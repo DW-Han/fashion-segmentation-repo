@@ -28,8 +28,15 @@ def index():
 		prediction =predict(last_record.data)
 		#print(last_record.data)
 		print(prediction)
-		return f'Your Image was: {prediction}'
-	return render_template('index.html')
+
+
+		# return f'Your Image was: {prediction}'
+
+		prediction_data = {'prediction': "classification: " + prediction}
+		return render_template('index.html', prediction_data=prediction_data)
+
+	prediction_data = {'prediction': "please submit image below"}
+	return render_template('index.html', prediction_data=prediction_data)
 
 # create download function for download files
 @app.route('/download/<upload_id>')
