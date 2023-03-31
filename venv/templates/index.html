@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+	<title>Virtual Closet</title>
+	<style>
+	section{
+		font-family: "Poppins";
+		font-weight: bold;
+		text-align: center;
+		font-size: 120%;
+
+		margin-top: 0px;
+		margin-right: 13%;
+		margin-bottom: 100px;
+		margin-left: 13%;
+
+		transition-property:color,text-shadow;
+		transition-duration: 0.5s;
+		transition-timing-function:ease-in;
+		}
+	.ok{
+		
+		font-size: 20px;
+	}
+	.op{
+		color: #e9cfff;
+		font-size: 20px;
+		margin-left: -70px;
+		font-weight: bold;
+		background-color: rgb(125, 89, 134);
+		border-radius: 5px;
+		cursor: pointer;
+		text-shadow:1px 2px #ffeebd;
+
+		transition-property:color,text-shadow,background-color;
+        transition-duration: 0.5s;
+        transition-timing-function:ease-in;
+	}
+	.op:hover{
+		font-size: 20px;
+		margin-left: -70px;
+		font-weight: bold;
+		background-color: rgb(84, 43, 93);
+		text-shadow:3px 3px #ff5e00;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	.center{
+		font-family: "Poppins";
+        font-weight: bold;
+        text-align: center;
+        font-size: 150%;
+
+        transition-property:color,text-shadow;
+        transition-duration: 0.5s;
+        transition-timing-function:ease-in;
+	}
+	
+	</style>
+</head>
+<body>
+	<div class="center">
+		<h1> Choose An Image to Store and Sort! </h1>
+		<form method="POST" action="/" enctype="multipart/form-data">
+			<input class="ok" type="file" accept="image/*" name="file" onchange="loadFile(event)">
+			<button class="op">Submit</button>
+		</form>
+	</div>
+
+	<section style="padding-top: 20px;">
+		<img  class="img-responsive" id="pic" width="400" height="400">
+	</section>
+	
+	<section>
+		<!-- the description at the bottom of the page, 
+		  look at above <style> for design-->
+		<!-- TODO: make the description a footer so its way at the bottom -->
+		<h2 class="section-header">ABOUT OUR MODEL</h2> 
+		<div style='text-align:center;'>
+		  <p > This website is our minimum viable project for CS 1699, Practical AI.
+			Our task was to create an application that supports machine learning, and to
+			choose a platform that best suited our model. Our application asks the user to
+			input an image of clothing they found online or in person, which is then sent
+			through our custom image segmentation model to identify the clothing based on
+			the pattern, shape, and design.
+		  </p>
+		  <p> Authors: Kenny Han, Emmanuelle Brent, Aidan Reilly </p>
+		</div>
+	</section>
+</body>
+<script>
+	var loadFile = function(event) {
+		var image = document.getElementById('pic');
+		
+		image.src=URL.createObjectURL(event.target.files[0]);
+		console.log(URL.createObjectURL(event.target.files[0]));
+
+	};
+  </script>
+</html>
