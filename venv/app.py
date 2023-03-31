@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, send_file
 from flask_sqlalchemy import SQLAlchemy
 from classification1_use import predict
 
+
 # Initialize flask and create sqlite database
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
@@ -25,17 +26,14 @@ def index():
 		db.session.add(upload)
 		db.session.commit()
 		last_record = db.session.query(Upload).order_by(Upload.id.desc()).first()
-		prediction =predict(last_record.data)
+		prediction = predict(last_record.data)
 		#print(last_record.data)
 		print(prediction)
-
-
 		# return f'Your Image was: {prediction}'
-
 		prediction_data = {'prediction': "classification: " + prediction}
-		return render_template('index.html', prediction_data=prediction_data)
+		return render_template('index.html', prediction_data=prediction_data, upload_id=last_record.id, )
 
-	prediction_data = {'prediction': "please submit image below"}
+	prediction_data = {'prediction': ""}
 	return render_template('index.html', prediction_data=prediction_data)
 
 # create download function for download files
