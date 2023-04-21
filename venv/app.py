@@ -1,8 +1,10 @@
 # import all libraires
+import os
 from io import BytesIO
 from flask import Flask, render_template, request, send_file
 from flask_sqlalchemy import SQLAlchemy
 from classification1_use import predict
+from classification1_use import get_img
 
 
 # Initialize flask and create sqlite database
@@ -31,10 +33,12 @@ def index():
 		print(prediction)
 		# return f'Your Image was: {prediction}'
 		prediction_data = {'prediction': "classification: " + prediction}
-		return render_template('index.html', prediction_data=prediction_data, upload_id=last_record.id, )
+		my_array = get_img()
+		return render_template('index.html', prediction_data=prediction_data, upload_id=last_record.id,image_array=my_array )
 
 	prediction_data = {'prediction': ""}
-	return render_template('index.html', prediction_data=prediction_data)
+	my_array = get_img()
+	return render_template('index.html', prediction_data=prediction_data,image_array=my_array)
 
 # create download function for download files
 @app.route('/download/<upload_id>')

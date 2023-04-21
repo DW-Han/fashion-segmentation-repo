@@ -7,6 +7,11 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 	<title>Virtual Closet</title>
 	<style>
+	h1{
+		font-family: "Poppins";
+		color: rgb(255, 255, 255);
+		background-color: #341061;
+	}
 	section{
 		font-family: "Poppins";
 		font-weight: bold;
@@ -23,7 +28,8 @@
 		transition-timing-function:ease-in;
 		}
 	.ok{
-
+		font-family: "Poppins";
+		font-weight: bold;
 		font-size: 20px;
 	}
 	.op{
@@ -54,7 +60,7 @@
         font-weight: bold;
         text-align: center;
         font-size: 150%;
-
+		margin: auto;
         transition-property:color,text-shadow;
         transition-duration: 0.5s;
         transition-timing-function:ease-in;
@@ -77,6 +83,7 @@
 
 
 	.rainbow {
+		height: 10%;
 	  text-align: center;
 	  animation: colorRotate 6s linear 0s infinite;
 	}
@@ -103,10 +110,12 @@
 </head>
 <body>
 	<div class="center">
-		<h1> Choose An Image to Store and Sort! </h1>
+		<h1> Store an clothes in your Virtual Closet! </h1>
 
 		<!-- prints prediction to user, in rainbow :) -->
-		  <h1 class="rainbow">{{ prediction_data.prediction }}</h1>
+		<div class="rainbow" style="height: 100px;">
+			{{ prediction_data.prediction }}
+		</div>
 
 		<!-- upload button -->
 		<form method="POST" action="/" enctype="multipart/form-data">
@@ -116,7 +125,7 @@
 
 		<!-- if image is uploaded, display it -->
 		{% if upload_id %}
-		<img src="{{ url_for('download', upload_id=upload_id) }}" style="width: 400px;">
+		<img src="{{ url_for('download', upload_id=upload_id) }}" style="width: 500px; height: 400px;">
 		{% endif %}
 
 		<!-- show box when image hasn't been uploaded -->
@@ -127,25 +136,30 @@
 		{% endif %}
 
 	</div>
-
-
 	
-	<section>
-		<!-- the description at the bottom of the page, 
-		  look at above <style> for design-->
-		<!-- TODO: make the description a footer so its way at the bottom -->
-		<h2 class="section-header">ABOUT OUR MODEL</h2> 
-		<div style='text-align:center;'>
-		  <p > This website is our minimum viable project for CS 1699, Practical AI.
-			Our task was to create an application that supports machine learning, and to
-			choose a platform that best suited our model. Our application asks the user to
-			input an image of clothing they found online or in person, which is then sent
-			through our custom image segmentation model to identify the clothing based on
-			the pattern, shape, and design.
-		  </p>
-		  <p> Authors: Kenny Han, Emmanuelle Brent, Aidan Reilly </p>
-		</div>
-	</section>
+	<ul>
+        {% for image_path in image_array %}
+        	<img src="{{ image_path }}" alt="Image">
+    	{% endfor %}
+    </ul>
+	<div style="padding-top: 5%;">
+		<section>
+			<!-- the description at the bottom of the page, 
+			look at above <style> for design-->
+			<!-- TODO: make the description a footer so its way at the bottom -->
+			<h2 class="section-header">ABOUT OUR MODEL</h2> 
+			<div style='text-align:center;'>
+			<p > This website is our minimum viable project for CS 1699, Practical AI.
+				Our task was to create an application that supports machine learning, and to
+				choose a platform that best suited our model. Our application asks the user to
+				input an image of clothing they found online or in person, which is then sent
+				through our custom image segmentation model to identify the clothing based on
+				the pattern, shape, and design.
+			</p>
+			<p> Authors: Kenny Han, Emmanuelle Brent, Aidan Reilly </p>
+			</div>
+		</section>
+	</div>
 </body>
 <script>
 	var loadFile = function(event) {

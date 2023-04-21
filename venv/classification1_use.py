@@ -97,3 +97,8 @@ def predict(blob):
     cv2.imwrite(results_dir + prediction_dir + '/' + prediction + '.jpg', original_image)
 
     return prediction
+def get_img():
+    folder_path = 'C:/Users/kenny/OneDrive/Desktop/fasion-segmentation-repo/venv/templates/images' # replace with the path to your folder
+    file_paths = [os.path.relpath(os.path.join(folder_path, f)) for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+    print(file_paths)
+    return file_paths
