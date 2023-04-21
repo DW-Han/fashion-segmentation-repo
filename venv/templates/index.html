@@ -4,47 +4,58 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Inder&family=Chango">
 	<title>Virtual Closet</title>
+	
 	<style>
-	h1{
-		font-family: "Poppins";
-		color: rgb(255, 255, 255);
-		background-color: #341061;
+	html {
+		background: #efefef;
 	}
-	section{
-		font-family: "Poppins";
-		font-weight: bold;
+	h1{
+		font: 100% "Chango", sans-serif;
+		font-size: 47px;
+		color: #003823;
+		text-shadow:2px 2px rgb(125, 89, 134);
 		text-align: center;
-		font-size: 120%;
-
-		margin-top: 0px;
-		margin-right: 13%;
-		margin-bottom: 100px;
-		margin-left: 13%;
-
-		transition-property:color,text-shadow;
-		transition-duration: 0.5s;
-		transition-timing-function:ease-in;
-		}
+		margin-bottom: 150px;
+		padding: 0px 10px;
+		position: relative;
+		background: #dfdfff;
+		box-sizing: 100px 200px;
+	}
+	h2{
+		font: 100% "Yusei Magic", sans-serif;
+		font-weight: bold;
+		font-size: 30px;
+		color:   #003823;
+		text-align: center;
+		margin: 10px 200px;
+		padding: 20px 20px;
+		position: relative;
+		background:#dfdfff;
+	}
+	body{
+		text-align: center;
+	}
 	.ok{
-		font-family: "Poppins";
+		font: "Yusei Magic", sans-serif;
 		font-weight: bold;
 		font-size: 20px;
 	}
 	.op{
-		color: #e9cfff;
+		color: #dfdfff;
 		font-size: 20px;
 		margin-left: -70px;
 		font-weight: bold;
 		background-color: rgb(125, 89, 134);
 		border-radius: 5px;
 		cursor: pointer;
-		text-shadow:1px 2px #ffeebd;
-
+		text-shadow:1px 1px #dfdfff;
+	
 		transition-property:color,text-shadow,background-color;
-        transition-duration: 0.5s;
-        transition-timing-function:ease-in;
+		transition-duration: 0.5s;
+		transition-timing-function:ease-in;
+		text-align: center;
 	}
 	.op:hover{
 		font-size: 20px;
@@ -54,16 +65,7 @@
 		text-shadow:3px 3px #ff5e00;
 		border-radius: 5px;
 		cursor: pointer;
-	}
-	.center{
-		font-family: "Poppins";
-        font-weight: bold;
-        text-align: center;
-        font-size: 150%;
-		margin: auto;
-        transition-property:color,text-shadow;
-        transition-duration: 0.5s;
-        transition-timing-function:ease-in;
+		align-items: center;
 	}
 	button {
 		font-size: 1.2rem;
@@ -75,19 +77,20 @@
 		padding: 0.5rem 1rem;
 		cursor: pointer;
 		transition: background-color 0.5s ease-in-out;
+		text-align: center;
+		margin: auto;
 	}
-
+	
 	button:hover {
 		background-color: #542b5d;
 	}
-
-
+	
 	.rainbow {
 		height: 10%;
 	  text-align: center;
 	  animation: colorRotate 6s linear 0s infinite;
 	}
-
+	
 	@keyframes colorRotate {
 	  from {
 		color: #6666ff;
@@ -105,12 +108,22 @@
 		color: #6666ff;
 	  }
 	}
+	p{
+		font: 100% "Inder", sans-serif;
+		font-size: 18px;
+		color: #41004c;
+		text-align: center;
+		width: 1000px;
+		margin: 0 auto;
+		padding: 0 10px;
+		position: relative;
+	}
 	
 	</style>
 </head>
 <body>
 	<div class="center">
-		<h1> Store an clothes in your Virtual Closet! </h1>
+		<h1> Add a piece of clothing to your Virtual Closet! </h1>
 
 		<!-- prints prediction to user, in rainbow :) -->
 		<div class="rainbow" style="height: 100px;">
@@ -125,7 +138,7 @@
 
 		<!-- if image is uploaded, display it -->
 		{% if upload_id %}
-		<img src="{{ url_for('download', upload_id=upload_id) }}" style="width: 500px; height: 400px;">
+		<img src="{{ url_for('download', upload_id=upload_id) }}" style="width: 500px; height : 400px">
 		{% endif %}
 
 		<!-- show box when image hasn't been uploaded -->
@@ -136,27 +149,27 @@
 		{% endif %}
 
 	</div>
-	
+
 	<ul>
         {% for image_path in image_array %}
         	<img src="{{ image_path }}" alt="Image">
     	{% endfor %}
     </ul>
-	<div style="padding-top: 5%;">
+	
+	<div styke="padding-top: 5%;">
 		<section>
 			<!-- the description at the bottom of the page, 
-			look at above <style> for design-->
+			  look at above <style> for design-->
 			<!-- TODO: make the description a footer so its way at the bottom -->
-			<h2 class="section-header">ABOUT OUR MODEL</h2> 
+			<h2 class="section-header">About This Project</h2> 
 			<div style='text-align:center;'>
-			<p > This website is our minimum viable project for CS 1699, Practical AI.
-				Our task was to create an application that supports machine learning, and to
-				choose a platform that best suited our model. Our application asks the user to
-				input an image of clothing they found online or in person, which is then sent
-				through our custom image segmentation model to identify the clothing based on
-				the pattern, shape, and design.
-			</p>
-			<p> Authors: Kenny Han, Emmanuelle Brent, Aidan Reilly </p>
+			  <p > This website is the final project for CS 1699 Practical AI, Spring 2023. For this project, we
+				were tasked to create an application that accomplishes something using machine learning on whatever 
+				platform best suits the app. Our application asks the user to input an image of clothing they found 
+				online or in person, which is then sent through an image classification model that will sort and store 
+				the image based on what type of clothing it is, creating a virtual dream closet for the user.
+			  </p>
+			  <p> <i>Authors: Kenny Han, Emmanuelle Brent, Aidan Reilly</i></p>
 			</div>
 		</section>
 	</div>

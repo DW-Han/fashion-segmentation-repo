@@ -5,31 +5,30 @@
     <script src="background.js"></script>
 </head>
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Bubbler One');
-    @import url('https://fonts.googleapis.com/css?family=Josefin Sans');
-    @import url('https://fonts.cdnfonts.com/css/bahnschrift');
+    @import url('https://fonts.googleapis.com/css?family=Yusei+Magic');
+    @import url('https://fonts.googleapis.com/css?family=Inder');
+    @import url('https://fonts.googleapis.com/css2?family=Chango');
     html{
-        background-color: rgba(217, 163, 69, 0.799);
+        background-color: #efefef;
     }
     body{
-        border: 4px double rgb(114, 59, 0);
+        border: 4px double #003823;
         border-radius: 10px;
-        background-color: rgba(233, 196, 141, 0.943);
+        background-color:#dfdfff;
         width: 250px;
-        height: 250px;
+        height: 350px;
     }
     #buffer{
-        height: 135px;
+        height: 200px;
     }
     #theTitle{
         display: flex; 
         align-items: center; 
         justify-content: center;
-        font-family: "Josefin Sans";
-        font-weight: bolder;
-        font-size: 30px;
-        text-shadow:2px 2px #5a5858;
-        color: rgb(5, 1, 39);
+        font: 100% "Chango", sans-serif;
+        font-size: 24px;
+        text-shadow:2px 2px rgb(125, 89, 134);
+        color: #003823;
         padding: 10px;
 
         transition-property:color,text-shadow;
@@ -47,12 +46,12 @@
         
         
         font-weight: bold;
-        font-family: 'Bahnschrift', sans-serif;
+        font-family: 'Inder', sans-serif;
         font-size: 20px;
     }
     div a:link, a:visited{
         text-decoration: none;
-        color:aliceblue;
+        color:#003823;
 
         transition-property:color,font-size;
         transition-duration: 0.5s;
@@ -61,25 +60,25 @@
 
     div a:hover{
         font-size: 23px;
-        color:rgb(2, 47, 86);
+        color:rgb(125, 89, 134);
     }
     .center{
         display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
     }
 </style>
 
 <body>
     <div id="theTitle">
-        My Virtual Closet
+        Virtual Closet
     </div>
     <div id="buffer">
-        <img src="icon.png" alt="pptx" style="width:150px; height:120px;" class="center">
+        <img src="icon.png" alt="pptx" style="width:125px; height:125px;" class="center">
     </div>
     <div id ="settings">
-        <a href="http://127.0.0.1:5000" target="_blank"> Go to Settings</a>
+        <a href="http://127.0.0.1:5000" target="_blank"> Go to My Closet</a>
     </div>
 </body>
 
